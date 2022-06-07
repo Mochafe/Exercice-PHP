@@ -10,15 +10,14 @@
     <?php  
         date_default_timezone_set("Europe/Paris");
 
-        $dateErr = new DateTime("2019-17-14");
+        $dateErr = DateTime::createFromFormat("d/m/Y", "32/17/2019");
         $errors = DateTime::getLastErrors();
 
+        var_dump($dateErr);
 
         if($errors["warning_count"] > 0 || $errors["error_count"] > 0) {
-            echo($dateErr->format("d/m/Y") . " est incorrect.");
+            echo("La date est incorrect.");
         }
-        
-        //echo($dateToday->format("Y") . " est " . (is_leap($dateToday) ? "bissextile" : "non bissextile"));
     ?>
 </body>
 </html>
